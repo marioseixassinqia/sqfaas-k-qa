@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak-v9
+  namespace: staging1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak-v9
+  template:
+    metadata:
+      labels:
+        app: keycloak-v9
+    spec:
+      initContainers:
+        - name: add-certificates
+          image: us-east1-docker.pkg.dev/prj-sqfaas-dev/sqfaas-dev/keycloak-v9:1.0.15.1
+          command:
+            - sh
+            - -c
+            - |
+              keytool -import -trustcacerts -alias sqfaas -file /opt/certs/ca.crt \
+              -keystore /usr/lib/jvm/jre/lib/security/cacerts -storepass changeit -noprompt
+          volumeMounts:
+          - mountPath: /opt/certs
+            name: secrets-files
+      containers:
+        - name: keycloak-v9
+          image: us-east1-docker.pkg.dev/prj-sqfaas-dev/sqfaas-dev/keycloak-v9:1.0.15.1
+          env:
+            - name: JAVA_OPTS
+              value: "-Djavax.net.ssl.trustStore=/opt/certs/keycloak-v9.jks -Djavax.net.ssl.trustStorePassword=demosys"
+            - name: TZ
+              value: America/Sao_Paulo
+            - name: DB_VENDOR
+              value: mssql
+            - name: DB_ADDR
+              value: 10.140.144.7
+            - name: DB_DATABASE
+              value: SQPCSTKCStaging1
+            - name: DB_USER
+              value: sqlserver
+            - name: DB_PASSWORD
+              value: demosys
+            - name: KEYCLOAK_USER
+              value: admin
+            - name: KEYCLOAK_PASSWORD
+              value: admin
+            - name: PROXY_ADDRESS_FORWARDING
+              value: "true"
+            - name: HTTPS_KEYSTORE
+              value: "/opt/certs/sqfaas.jks"
+            - name: HTTPS_KEYSTORE_PASSWORD
+              value: "demosys"
+          ports:
+            - containerPort: 8080
+            - containerPort: 8443
+          volumeMounts:
+          - mountPath: /opt/certs
+            name: secrets-files
+            readOnly: true
+      volumes:
+      - name: secrets-files
+        secret:
+          secretName: secrets-files
+      hostAliases:
+      - hostnames:
+        - kc.staging1.sqfaas.in
+        - bff.staging1.sqfaas.in
+        - staging1.sqfaas.in
+        - kc9.staging1.sqfaas.in
+        - sqctrlportal.staging1.sqfaas.in
+        - sqctrl.staging1.sqfaas.in
+        ip: 10.140.133.172
+      tolerations:
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
