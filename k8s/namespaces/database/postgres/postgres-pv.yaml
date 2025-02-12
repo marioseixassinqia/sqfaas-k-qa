@@ -9,4 +9,4 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/postgres/data
+    path: /opt/k8s-volumes/postgres
