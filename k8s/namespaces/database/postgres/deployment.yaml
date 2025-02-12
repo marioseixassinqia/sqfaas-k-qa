@@ -23,7 +23,7 @@ spec:
             - name: POSTGRES_PASSWORD
               value: demosys
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: /var/lib/postgresql
               name: postgres
       volumes:
         - name: postgres
