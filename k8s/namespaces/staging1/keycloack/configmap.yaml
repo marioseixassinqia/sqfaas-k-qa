@@ -11,7 +11,7 @@ data:
   KC_HOSTNAME_STRICT: "false"
   KC_TRANSACTION_XA_ENABLED: "false"
   KC_DB: "postgres"
-  KC_DB_URL_HOST: "postgres.storage.svc.cluster.local"
+  KC_DB_URL_HOST: "postgres.database.svc.cluster.local"
   KC_DB_URL_DATABASE: "keycloak_staging1"
   KC_DB_USERNAME: "sysdemo"
   KC_DB_PASSWORD: "demosys"
