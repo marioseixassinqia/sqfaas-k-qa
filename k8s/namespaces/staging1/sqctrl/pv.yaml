@@ -11,7 +11,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/config/
+    path: /sqctrl/staging1/config/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -26,7 +26,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/data/
+    path: /sqctrl/staging1/data/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -41,7 +41,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/exports/
+    path: /sqctrl/staging1/exports/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -56,7 +56,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/imports/
+    path: /sqctrl/staging1/imports/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -71,7 +71,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/shared/
+    path: /sqctrl/staging1/shared/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -86,7 +86,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/upload/
+    path: /sqctrl/staging1/upload/
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -101,4 +101,4 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /opt/k8s-volumes/sqctrl/staging1/filesportal/
+    path: /sqctrl/staging1/filesportal/
