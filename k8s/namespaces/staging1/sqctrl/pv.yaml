@@ -12,6 +12,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/config/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -27,6 +28,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/data/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -42,6 +44,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/exports/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -57,6 +60,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/imports/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -72,6 +76,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/shared/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -87,6 +92,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /sqctrl/staging1/upload/
+
 ---
 apiVersion: v1
 kind: PersistentVolume
