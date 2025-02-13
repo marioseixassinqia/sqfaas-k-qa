@@ -74,31 +74,24 @@ spec:
       - name: truststore
         secret:
           secretName: secrets-files
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/config/
-          type: Directory
-        name: sqctrl-config
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/data/
-          type: Directory
-        name: sqctrl-data
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/exports/
-          type: Directory
-        name: sqctrl-exports
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/imports/
-          type: Directory
-        name: sqctrl-imports
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/shared/
-          type: Directory
-        name: sqctrl-shared
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/upload/
-          type: Directory
-        name: sqctrl-upload
-      - hostPath:
-          path: /opt/k8s-volumes/sqctrl/staging1/filesportal/
-          type: Directory
-        name: sqctrl-filesportal
+      - name: sqctrl-config
+        persistentVolumeClaim:
+          claimName: sqctrl-config-pvc
+      - name: sqctrl-data
+        persistentVolumeClaim:
+          claimName: sqctrl-data-pvc
+      - name: sqctrl-exports
+        persistentVolumeClaim:
+          claimName: sqctrl-exports-pvc
+      - name: sqctrl-imports
+        persistentVolumeClaim:
+          claimName: sqctrl-imports-pvc
+      - name: sqctrl-shared
+        persistentVolumeClaim:
+          claimName: sqctrl-shared-pvc
+      - name: sqctrl-upload
+        persistentVolumeClaim:
+          claimName: sqctrl-upload-pvc
+      - name: sqctrl-filesportal
+        persistentVolumeClaim:
+          claimName: sqctrl-filesportal-pvc
