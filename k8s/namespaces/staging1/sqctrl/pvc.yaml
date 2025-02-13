@@ -1,102 +1,106 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-config-pvc
-  namespace: staging1
+  name: sqctrl-pvc-config
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-config-storage  # Referência ao StorageClass para Config
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-config
 
 ---
 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-data-pvc
-  namespace: staging1
+  name: sqctrl-pvc-data
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-data-storage  # Referência ao StorageClass para Dados
-
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-data
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-exports-pvc
-  namespace: staging1
+  name: sqctrl-pvc-exports
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-exports-storage  # Referência ao StorageClass para Exports
-
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-exports
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-imports-pvc
-  namespace: staging1
+  name: sqctrl-pvc-filesportal
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-imports-storage  # Referência ao StorageClass para Imports
-
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-filesportal
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-shared-pvc
-  namespace: staging1
+  name: sqctrl-pvc-imports
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-shared-storage  # Referência ao StorageClass para Shared
-
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-imports
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-upload-pvc
-  namespace: staging1
+  name: sqctrl-pvc-shared
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-upload-storage  # Referência ao StorageClass para Upload
-
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-shared
 ---
-
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sqctrl-filesportal-pvc
-  namespace: staging1
+  name: sqctrl-pvc-upload
+  namespace: sqfaas
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-filesportal-storage  # Referência ao StorageClass para FilesPortal
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-pv-upload
