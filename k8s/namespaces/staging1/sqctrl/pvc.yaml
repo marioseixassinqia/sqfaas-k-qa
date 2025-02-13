@@ -11,7 +11,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-config
+  volumeName: sqctrl-staging1-pv-config
 
 ---
 
@@ -28,7 +28,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-data
+  volumeName: sqctrl-staging1-pv-data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -43,7 +43,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-exports
+  volumeName: sqctrl-staging1-pv-exports
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -58,7 +58,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-filesportal
+  volumeName: sqctrl-staging1-pv-filesportal
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -73,7 +73,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-imports
+  volumeName: sqctrl-staging1-pv-imports
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -88,7 +88,7 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-shared
+  volumeName: sqctrl-staging1-pv-shared
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -103,4 +103,4 @@ spec:
       storage: 10Gi
   volumeMode: Filesystem
   storageClassName: premium-rwo
-  volumeName: sqctrl-pv-upload
+  volumeName: sqctrl-staging1-pv-upload
