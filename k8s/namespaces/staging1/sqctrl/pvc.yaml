@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-config-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-config-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-data-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-data-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-exports-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-exports-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-imports-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-imports-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-shared-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-shared-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-upload-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-upload-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-filesportal-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sqctrl-filesportal-pv
