@@ -9,9 +9,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-config-pv
+  storageClassName: ebs-config-storage  # Referência ao StorageClass para Config
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -23,9 +24,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-data-pv
+  storageClassName: ebs-data-storage  # Referência ao StorageClass para Dados
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -37,9 +39,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-exports-pv
+  storageClassName: ebs-exports-storage  # Referência ao StorageClass para Exports
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -51,9 +54,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-imports-pv
+  storageClassName: ebs-imports-storage  # Referência ao StorageClass para Imports
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -65,9 +69,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-shared-pv
+  storageClassName: ebs-shared-storage  # Referência ao StorageClass para Shared
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -79,9 +84,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-upload-pv
+  storageClassName: ebs-upload-storage  # Referência ao StorageClass para Upload
 
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -93,4 +99,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: sqctrl-filesportal-pv
+  storageClassName: ebs-filesportal-storage  # Referência ao StorageClass para FilesPortal
