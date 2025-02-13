@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-config-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/config/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-data-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/data/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-exports-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/exports/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-imports-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/imports/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-shared-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/shared/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-upload-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/upload/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-filesportal-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /opt/k8s-volumes/sqctrl/staging1/filesportal/
