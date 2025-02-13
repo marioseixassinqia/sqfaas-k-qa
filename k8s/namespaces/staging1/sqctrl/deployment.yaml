@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sqctrl
+  name: sqctrl
+  namespace: staging1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqctrl
+  template:
+    metadata:
+      labels:
+        app: sqctrl
+    spec:
+      containers:
+      - env:
+        - name: CATALINA_OPTS
+          value: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010
+            -Dcom.sun.management.jmxremote.rmi.port=9010 -Dcom.sun.management.jmxremote.ssl=false
+            -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=$hostAddr
+            -Dcom.sun.management.jmxremote.local.only=false -Xdebug -Xrunjdwp:transport=dt_socket,address=*:8000,server=y,suspend=n
+        - name: JAVA_OPTS
+          value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosys
+            -Dlogback.configurationFile=/usr/local/sqctrl/config/logback.xml
+        envFrom:
+        - configMapRef:
+            name: sqctrl-env
+        image: sinqiainterno.azurecr.io/fundos/sqctrl/controladoriacustodia:9.68af
+        imagePullPolicy: Always
+        name: sqctrl
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        - containerPort: 9010
+        - containerPort: 9090
+        - containerPort: 8000
+        volumeMounts:
+        - mountPath: /opt/certs
+          name: truststore
+          readOnly: true
+        - mountPath: /usr/local/sqctrl/config
+          name: sqctrl-config
+        - mountPath: /usr/local/sqctrl/data
+          name: sqctrl-data
+        - mountPath: /usr/local/sqctrl/exports
+          name: sqctrl-exports
+        - mountPath: /usr/local/sqctrl/imports
+          name: sqctrl-imports
+        - mountPath: /usr/local/sqctrl/shared
+          name: sqctrl-shared
+        - mountPath: /usr/local/sqctrl/upload
+          name: sqctrl-upload
+        - mountPath: /usr/local/sqctrl/filesportal
+          name: sqctrl-filesportal
+      hostAliases:
+      - hostnames:
+        - kc.staging1.sqfaas.in
+        - bff.staging1.sqfaas.in
+        - staging1.sqfaas.in
+        ip: 10.140.133.172
+      imagePullSecrets:
+      - name: acr-secret
+      tolerations:
+      - effect: NoExecute
+        key: node.kubernetes.io/unreachable
+        operator: Exists
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/control-plane
+        operator: Exists
+      volumes:
+      - name: truststore
+        secret:
+          secretName: secrets-files
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/config/
+          type: Directory
+        name: sqctrl-config
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/data/
+          type: Directory
+        name: sqctrl-data
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/exports/
+          type: Directory
+        name: sqctrl-exports
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/imports/
+          type: Directory
+        name: sqctrl-imports
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/shared/
+          type: Directory
+        name: sqctrl-shared
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/upload/
+          type: Directory
+        name: sqctrl-upload
+      - hostPath:
+          path: /opt/k8s-volumes/sqctrl/staging1/filesportal/
+          type: Directory
+        name: sqctrl-filesportal
