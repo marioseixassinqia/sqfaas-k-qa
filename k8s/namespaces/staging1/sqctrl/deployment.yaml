@@ -62,7 +62,7 @@ spec:
         - staging1.sqfaas.in
         ip: 10.140.133.172
       imagePullSecrets:
-      - name: acr-secret
+      - name: temp-secret-2
       tolerations:
       - effect: NoExecute
         key: node.kubernetes.io/unreachable
