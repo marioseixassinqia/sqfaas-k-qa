@@ -27,7 +27,7 @@ spec:
             -Dlogback.configurationFile=/usr/local/sqctrl/config/logback.xml
         envFrom:
         - configMapRef:
-            name: sqctrl-env
+            name: sqctrl-configmap
         image: sinqiainterno.azurecr.io/fundos/sqctrl/controladoriacustodia:9.68af
         imagePullPolicy: Always
         name: sqctrl
