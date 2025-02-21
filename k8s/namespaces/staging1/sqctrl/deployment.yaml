@@ -38,9 +38,9 @@ spec:
         - containerPort: 9090
         - containerPort: 8000
         volumeMounts:
-        # - mountPath: /opt/certs
-        #  name: truststore
-        # readOnly: true
+        - mountPath: /opt/certs
+         :  name: truststore
+           readOnly: true
         - name: sqctrl-config
           mountPath: /sqctrl/staging1/config
         - name: sqctrl-data
