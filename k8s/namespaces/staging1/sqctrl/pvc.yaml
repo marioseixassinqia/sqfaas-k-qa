@@ -104,3 +104,21 @@ spec:
   volumeMode: Filesystem
   storageClassName: premium-rwo
   volumeName: sqctrl-staging1-pv-upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-certs-pvc
+  namespace: staging1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-certs-pv
+
