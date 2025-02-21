@@ -16,7 +16,7 @@ data:
   SQCTRL_DU_AUTH_PASSWORD: "demosys"
   SQCTRL_DRIVEAMNET_BLOQUEIO_METODO: "JDBC_TIPO1"
   SQCTRL_SERVICO_DOWNLOADER_URL: "https://staging1.sqfaas.in/svc-downloader"
-  #SQCTRL_DU_TIPO: "FUNDOSV1"
+  SQCTRL_DU_TIPO: "FUNDOSV1"
   SQCTRL_PATHDU: "/sqctrl/staging1/config/DriveAM.du"
   SQCTRL_UPLOAD_PATH: "/sqctrl/staging1/upload"
   SQCTRL_CLUSTER_SHARED_FOLDER: "/sqctrl/staging1/shared"
