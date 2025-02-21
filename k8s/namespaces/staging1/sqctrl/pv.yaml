@@ -114,3 +114,23 @@ spec:
   storageClassName: premium-rwo
   hostPath:
     path: /sqctrl/staging1/upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-certs-pv
+  namespace: staging1
+spec:
+  capacity:
+    storage: 1Gi  
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce  
+  persistentVolumeReclaimPolicy: Retain  
+  storageClassName: premium-rwo
+  hostPath:
+    path: /opt/certs/ 
+    #type: Directory 
+
