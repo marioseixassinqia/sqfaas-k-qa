@@ -4,8 +4,20 @@ metadata:
   name: sqctrl-configmap
   namespace: staging1
 data:
-  CATALINA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.rmi.port=9010 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=$hostAddr -Dcom.sun.management.jmxremote.local.only=false -Xdebug -Xrunjdwp:transport=dt_socket,address=*:8000,server=y,suspend=n"
-  JAVA_OPTS: "-Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosys -Dlogback.configurationFile=/sqctrl/staging1/config/logback.xml"
+  CATALINA_OPTS: |
+    -Dcom.sun.management.jmxremote
+    -Dcom.sun.management.jmxremote.port=9010
+    -Dcom.sun.management.jmxremote.rmi.port=9010
+    -Dcom.sun.management.jmxremote.ssl=false
+    -Dcom.sun.management.jmxremote.authenticate=false
+    -Djava.rmi.server.hostname=$hostAddr
+    -Dcom.sun.management.jmxremote.local.only=false
+    -Xdebug
+    -Xrunjdwp:transport=dt_socket,address=*:8000,server=y,suspend=n
+  JAVA_OPTS: |
+    -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks
+    -Djavax.net.ssl.trustStorePassword=demosys
+    -Dlogback.configurationFile=/sqctrl/staging1/config/logback.xml
   SQCTRL_APP_CONTEXT: "tomcat10"
   SQCTRL_JDBC_DRIVER: "br.com.drive.driveamnet.util.jdbc.jtds.JTDSDriverWrapper"
   SQCTRL_JDBC_URL: "drive:jdbc:jtds:sqlserver://10.140.144.13:1433/SQCTRLStaging1;sendStringParametersAsUnicode=false"
@@ -41,7 +53,7 @@ data:
   SQCTRL_REST_ENABLED: "true"
   SQCTRL_REST_AUTH_TOKEN_DURATION: "120"
   SQCTRL_REST_AUTH_TOKEN_SECURED: "false"
-  SQCTRL_REST_AUTH_TOKEN_DOMAIN: "kc.sqfaas.dev"
+  SQCTRL_REST_AUTH_TOKEN_DOMAIN: "kc.staging1.sqfaas.dev"
   SQCTRL_REST_AUTH_ALGORITHM_KEY: "clientKey"
   SQCTRL_REST_PAGE_LIMIT_DEFAULT: "15"
   SQCTRL_REST_AUTH_CACHE_USER_DISABLED: "true"
