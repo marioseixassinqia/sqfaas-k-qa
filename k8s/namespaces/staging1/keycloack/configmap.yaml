@@ -5,9 +5,9 @@ metadata:
   namespace: staging1
 data:
   TZ: "America/Sao_Paulo"
-  KC_HOSTNAME: "kc.staging1.sqfaas.in"
-  KC_HOSTNAME_URL: "https://kc.staging1.sqfaas.in"
-  KC_HOSTNAME_ADMIN_URL: "https://kc.staging1.sqfaas.in"
+  KC_HOSTNAME: "kc.staging1.sqfaas.dev"
+  KC_HOSTNAME_URL: "https://kc.staging1.sqfaas.dev"
+  KC_HOSTNAME_ADMIN_URL: "https://kc.staging1.sqfaas.dev"
   KC_HOSTNAME_STRICT: "false"
   KC_TRANSACTION_XA_ENABLED: "false"
   KC_DB: "postgres"
