@@ -56,9 +56,9 @@ spec:
           mountPath: /sqctrl/staging1/upload
       hostAliases:
       - hostnames:
-        - kc.staging1.sqfaas.in
-        - bff.staging1.sqfaas.in
-        - staging1.sqfaas.in
+        - kc.staging1.sqfaas.dev
+        - bff.staging1.sqfaas.dev
+        - staging1.sqfaas.dev
         ip: 10.140.133.172
       imagePullSecrets:
       - name: acr-secret
