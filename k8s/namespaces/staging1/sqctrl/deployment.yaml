@@ -59,7 +59,7 @@ spec:
         - kc.staging1.sqfaas.dev
         - bff.staging1.sqfaas.dev
         - staging1.sqfaas.dev
-        ip: 10.140.133.172
+        ip: 10.140.134.13
       imagePullSecrets:
       - name: acr-secret
       tolerations:
