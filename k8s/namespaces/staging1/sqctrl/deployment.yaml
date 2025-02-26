@@ -70,9 +70,9 @@ spec:
         key: node-role.kubernetes.io/control-plane
         operator: Exists
       volumes:
-      - name: truststore
+      - name: certs
         secret:
-          secretName: secrets-files
+          secretName: sqfaas-files
       volumes:
         - name: sqctrl-config
           persistentVolumeClaim:
