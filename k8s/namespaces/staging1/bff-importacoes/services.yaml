@@ -4,7 +4,7 @@ metadata:
   labels:
     app: bff-importacoes
   name: bff-importacoes
-  nampespace: staging1
+  namespace: staging1
 spec:
   ports:
   - port: 80
