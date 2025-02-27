@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mfe-boletagem-configmap
+        app: mfe-boletagem
     spec:
       containers:
       - envFrom:
