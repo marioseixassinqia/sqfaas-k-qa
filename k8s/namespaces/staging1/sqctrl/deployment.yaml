@@ -38,7 +38,8 @@ spec:
         - containerPort: 9090
         - containerPort: 8000
         volumeMounts:
-        - mountPath: /usr/local/https
+        - name: truststore
+          mountPath: /usr/local/https
           name: truststore
         - name: certs
           mountPath: /opt/certs
