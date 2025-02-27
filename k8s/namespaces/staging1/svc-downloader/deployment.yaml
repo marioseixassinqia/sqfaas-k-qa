@@ -30,9 +30,6 @@ spec:
         ports:
         - containerPort: 8081
         volumeMounts:
-        - mountPath: /etc/hosts
-          name: custom-hosts
-          subPath: hosts
         - mountPath: /usr/local/https
           name: truststore
       imagePullSecrets:
@@ -45,12 +42,6 @@ spec:
         key: node-role.kubernetes.io/control-plane
         operator: Exists
       volumes:
-      - configMap:
-          items:
-          - key: hosts
-            path: hosts
-          name: custom-hosts
-        name: custom-hosts
       - name: truststore
         secret:
           secretName: secrets-files
