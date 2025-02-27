@@ -44,4 +44,4 @@ spec:
       volumes:
       - name: truststore
         secret:
-          secretName: secrets-files
+          secretName: sqfaas-files
