@@ -4,7 +4,7 @@ metadata:
   labels:
     app: sqhelp
   name: sqhelp
-  namespace:staging1
+  namespace: staging1
 spec:
   replicas: 1
   selector:
@@ -16,30 +16,30 @@ spec:
         app: sqhelp
     spec:
       containers:
-      - env:
-        - name: JAVA_OPTS
-          value: -Djavax.net.ssl.trustStore=/usr/local/https/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosys
-        - name: SERVER_SERVLET_CONTEXTPATH
-          value: /help
-        image: sinqia.azurecr.io/fundos/sqfaas/sqhelp/sqhelp:1.1.0-rc.1
-        imagePullPolicy: Always
-        name: sqhelp
-        ports:
-        - containerPort: 8081
-        volumeMounts:
-        - mountPath: /usr/local/https
-          name: sqfaas-files
-          readOnly: true
+        - env:
+            - name: JAVA_OPTS
+              value: -Djavax.net.ssl.trustStore=/usr/local/https/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosys
+            - name: SERVER_SERVLET_CONTEXTPATH
+              value: /help
+          image: sinqia.azurecr.io/fundos/sqfaas/sqhelp/sqhelp:1.1.0-rc.1
+          imagePullPolicy: Always
+          name: sqhelp
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - mountPath: /usr/local/https
+              name: sqfaas-files
+              readOnly: true
       imagePullSecrets:
-      - name: acr-secret
+        - name: acr-secret
       tolerations:
-      - effect: NoExecute
-        key: node.kubernetes.io/unreachable
-        operator: Exists
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/control-plane
-        operator: Exists
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
       volumes:
-      - name: secrets-files
-        secret:
-          secretName: sqfaas-files
+        - name: sqfaas-files  
+          secret:
+            secretName: sqfaas-files
