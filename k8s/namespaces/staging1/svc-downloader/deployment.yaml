@@ -4,6 +4,7 @@ metadata:
   labels:
     app: svc-downloader
   name: svc-downloader
+  namespace: staging1
 spec:
   replicas: 1
   selector:
