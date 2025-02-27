@@ -4,4 +4,4 @@ metadata:
   name: svc-downloader-configmap
   namespace: staging1
 data:
-  SERVER_SERVLET_CONTEXTPATH=/svc-downloader
+  SERVER_SERVLET_CONTEXTPATH: "/svc-downloader"
