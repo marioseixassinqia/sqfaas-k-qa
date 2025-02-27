@@ -20,7 +20,7 @@ spec:
         - configMapRef:
             name: mfe-common-configmap
         - configMapRef:
-            name: mfe-boletagem-env
+            name: mfe-boletagem-configmap
         image: sinqia.azurecr.io/fundos/sqfaas/mfe/boletagem:v16.1.0-rc.1
         imagePullPolicy: Always
         name: mfe-boletagem
