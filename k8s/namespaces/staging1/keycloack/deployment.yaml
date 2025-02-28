@@ -26,12 +26,12 @@ spec:
             - containerPort: 8443
           volumeMounts:
             - mountPath: /opt/certs
-              name: secrets-files
+              name: sqfaas-files
               readOnly: true
       volumes:
-        - name: secrets-files
+        - name: certs
           secret:
-            secretName: secrets-files
+            secretName: sqfaas-files
       tolerations:
         - key: "node-role.kubernetes.io/control-plane"
           operator: "Exists"
