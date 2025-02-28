@@ -38,11 +38,9 @@ spec:
         - containerPort: 9090
         - containerPort: 8000
         volumeMounts:
-        - name: truststore
-          mountPath: /usr/local/https
-          name: truststore
-        - name: certs
-          mountPath: /opt/certs
+        - mountPath: /opt/certs
+          name: certs
+          readOnly: true
         - name: sqctrl-config
           mountPath: /sqctrl/staging1/config
         - name: sqctrl-data
@@ -73,7 +71,7 @@ spec:
         key: node-role.kubernetes.io/control-plane
         operator: Exists
       volumes:
-      - name: truststore
+      - name: certs
         secret:
           secretName: sqfaas-files
       volumes:
