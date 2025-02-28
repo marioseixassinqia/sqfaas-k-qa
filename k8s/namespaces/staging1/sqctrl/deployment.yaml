@@ -39,7 +39,7 @@ spec:
         - containerPort: 8000
         volumeMounts:
         - mountPath: /opt/certs
-          name: certs
+          name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
           readOnly: true
         - name: sqctrl-config
           mountPath: /sqctrl/staging1/config
@@ -71,10 +71,9 @@ spec:
         key: node-role.kubernetes.io/control-plane
         operator: Exists
       volumes:
-      - name: certs
-        secret:
-          secretName: sqfaas-files
-      volumes:
+        - name: certs
+          secret:
+            secretName: sqfaas-files  # Secret que contém o arquivo sqfaas.jks
         - name: sqctrl-config
           persistentVolumeClaim:
             claimName: sqctrl-pvc-config
