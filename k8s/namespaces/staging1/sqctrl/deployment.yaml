@@ -96,6 +96,3 @@ spec:
         - name: sqctrl-upload
           persistentVolumeClaim:
             claimName: sqctrl-pvc-upload
-        - name: certs
-          persistentVolumeClaim:
-            claimName: sqctrl-certs-pvc
