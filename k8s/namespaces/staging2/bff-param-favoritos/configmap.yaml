@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bff-param-favoritos-configmap
+  namespace: staging2
+data:
+  SINQIA_FAVORITOS_URL: https://staging2.sqfaas.dev/svc-param-favoritos

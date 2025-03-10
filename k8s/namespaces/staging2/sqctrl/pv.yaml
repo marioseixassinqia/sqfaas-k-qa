@@ -1,0 +1,136 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-config
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/config
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-data
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/data
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-exports
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/exports
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-filesportal
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/filesportal
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-imports
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/imports
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-shared
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/shared
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-staging2-pv-upload
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/staging2/upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-certs-pv
+  namespace: staging2
+spec:
+  capacity:
+    storage: 1Gi  
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce  
+  persistentVolumeReclaimPolicy: Retain  
+  storageClassName: premium-rwo
+  hostPath:
+    path: /opt/certs/ 
+    #type: Directory 
+
