@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-indices-cotacoes-configmap
+  namespace: staging3
+data:
+  BFF_URL: https://bff.staging3.sqfaas.dev/importacoes/api
