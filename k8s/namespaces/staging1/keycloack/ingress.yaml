@@ -35,4 +35,4 @@ spec:
   tls:
   - hosts:
     - kc.staging1.sqfaas.dev
-    secretName: ingress-tls-new
+    secretName: ingress-secret
