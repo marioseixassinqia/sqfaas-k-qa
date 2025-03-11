@@ -4,5 +4,5 @@ metadata:
   name: mfe-sqctrl-legado-configmap
   namespace: staging1
 data:
-  BFF_URL: https://bff.staging1.sqfaas.in/sqctrl-legado/api
+  BFF_URL: https://bff.staging1.sqfaas.dev/sqctrl-legado/api
   URL_LEGADO: https://staging1.sqfaas.dev/frontend
