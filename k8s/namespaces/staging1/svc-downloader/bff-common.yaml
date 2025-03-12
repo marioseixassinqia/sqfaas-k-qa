@@ -18,7 +18,7 @@ data:
   SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWKSETURI: "https://kc.staging1.sqfaas.dev/realms/sinqia/protocol/openid-connect/certs"
   SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI: "https://kc.staging1.sqfaas.dev/realms/sinqia"
 
-  SPRING_DATA_REDIS_HOST: "redis.database.svc.cluster.local"
+  SPRING_DATA_REDIS_HOST: "redis.database.staging1.svc.cluster.local"
   SPRING_DATA_REDIS_DATABASE: "1"
 
   LOGGING_LEVEL_BR: "DEBUG"
