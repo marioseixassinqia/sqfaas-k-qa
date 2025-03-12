@@ -34,8 +34,9 @@ spec:
         ports:
         - containerPort: 8081
         volumeMounts:
-        - mountPath: /usr/local/https
-          name: truststore
+         - mountPath: /opt/certs
+           name: certs
+          readOnly: true
       imagePullSecrets:
       - name: acr-secret
       tolerations:
@@ -46,6 +47,6 @@ spec:
         key: node-role.kubernetes.io/control-plane
         operator: Exists
       volumes:
-      - name: truststore
-        secret:
-          secretName: sqfaas-files
+        - name: certs
+          secret:
+            secretName: sqfaas-files
