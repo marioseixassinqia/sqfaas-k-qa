@@ -22,7 +22,7 @@ spec:
         - name: SERVER_PORT
           value: '8081'
         - name: JAVA_OPTS
-          value: -Djavax.net.ssl.trustStore=/usr/local/https/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosys
+          value: value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosy
         envFrom:
         - configMapRef:
             name: bff-common-configmap
@@ -34,8 +34,9 @@ spec:
         ports:
         - containerPort: 8081
         volumeMounts:
-        - mountPath: /usr/local/https
-          name: truststore
+        - mountPath: /opt/certs
+          name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
+          readOnly: true
       imagePullSecrets:
       - name: acr-secret
       tolerations:
@@ -45,7 +46,6 @@ spec:
       - effect: NoSchedule
         key: node-role.kubernetes.io/control-plane
         operator: Exists
-      volumes:
-      - name: truststore
-        secret:
-          secretName: sqfaas-files
+        - name: certs
+          secret:
+            secretName: sqfaas-files
