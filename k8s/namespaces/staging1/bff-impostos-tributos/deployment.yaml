@@ -22,7 +22,7 @@ spec:
         - name: SERVER_PORT
           value: '8081'
         - name: JAVA_OPTS
-          value: value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosy
+          value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosy
         envFrom:
         - configMapRef:
             name: bff-common-configmap
