@@ -16,36 +16,36 @@ spec:
         app: bff-sqctrl-legado
     spec:
       containers:
-      - env:
-        - name: SERVER_SERVLET_CONTEXTPATH
-          value: /sqctrl-legado
-        - name: SERVER_PORT
-          value: '8081'
-        - name: JAVA_OPTS
-          value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosy
-        envFrom:
-        - configMapRef:
-            name: bff-common-configmap
-        - configMapRef:
-            name: bff-sqctrl-legado-configmap
-        image: sinqia.azurecr.io/fundos/sqfaas/bff/sqctrl-legado:1.1.0-rc.2
-        imagePullPolicy: Always
-        name: bff-sqctrl-legado
-        ports:
-        - containerPort: 8081
-        volumeMounts:
-        - mountPath: /opt/certs
-          name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
-          readOnly: true
+        - env:
+            - name: SERVER_SERVLET_CONTEXTPATH
+              value: /sqctrl-legado
+            - name: SERVER_PORT
+              value: '8081'
+            - name: JAVA_OPTS
+              value: -Djavax.net.ssl.trustStore=/opt/certs/sqfaas.jks -Djavax.net.ssl.trustStorePassword=demosy
+          envFrom:
+            - configMapRef:
+                name: bff-common-configmap
+            - configMapRef:
+                name: bff-sqctrl-legado-configmap
+          image: sinqia.azurecr.io/fundos/sqfaas/bff/sqctrl-legado:1.1.0-rc.2
+          imagePullPolicy: Always
+          name: bff-sqctrl-legado
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - mountPath: /opt/certs
+              name: certs
+              readOnly: true
       imagePullSecrets:
-      - name: acr-secret
+        - name: acr-secret
       tolerations:
-      - effect: NoExecute
-        key: node.kubernetes.io/unreachable
-        operator: Exists
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/control-plane
-        operator: Exists
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
       volumes:
         - name: certs
           secret:
