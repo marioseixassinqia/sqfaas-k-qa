@@ -34,8 +34,8 @@ spec:
         ports:
         - containerPort: 8081
         volumeMounts:
-         - mountPath: /opt/certs
-           name: certs
+        - mountPath: /opt/certs
+          name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
           readOnly: true
       imagePullSecrets:
       - name: acr-secret
