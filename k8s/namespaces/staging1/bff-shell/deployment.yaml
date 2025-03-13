@@ -37,21 +37,21 @@ spec:
         - mountPath: /opt/certs
           name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
           readOnly: true
-            hostAliases:
-      - hostnames:
-        - kc.staging1.sqfaas.dev
-        - bff.staging1.sqfaas.dev
-        - staging1.sqfaas.dev
-        ip: 10.140.134.13
+      hostAliases:
+        - hostnames:
+            - kc.staging1.sqfaas.dev
+            - bff.staging1.sqfaas.dev
+            - staging1.sqfaas.dev
+          ip: 10.140.134.13
       imagePullSecrets:
-      - name: acr-secret
+        - name: acr-secret
       tolerations:
-      - effect: NoExecute
-        key: node.kubernetes.io/unreachable
-        operator: Exists
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/control-plane
-        operator: Exists
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
       volumes:
         - name: certs
           secret:
