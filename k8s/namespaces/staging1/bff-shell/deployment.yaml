@@ -37,6 +37,12 @@ spec:
         - mountPath: /opt/certs
           name: certs  # Aqui está o volume 'certs' que está sendo montado corretamente
           readOnly: true
+            hostAliases:
+      - hostnames:
+        - kc.staging1.sqfaas.dev
+        - bff.staging1.sqfaas.dev
+        - staging1.sqfaas.dev
+        ip: 10.140.134.13
       imagePullSecrets:
       - name: acr-secret
       tolerations:
