@@ -4,6 +4,7 @@ metadata:
   name: keycloak-ingress
   namespace: staging2
   annotations:
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
     nginx.ingress.kubernetes.io/cors-allow-headers: Content-Type,Authorization
     nginx.ingress.kubernetes.io/cors-allow-methods: GET, POST, OPTIONS, PUT, DELETE
     nginx.ingress.kubernetes.io/cors-allow-origin: '*'
