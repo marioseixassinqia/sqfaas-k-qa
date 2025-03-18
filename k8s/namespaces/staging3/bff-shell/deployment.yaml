@@ -38,9 +38,9 @@ spec:
           name: truststore
       hostAliases:
       - hostnames:
-        - kc.staging1.sqfaas.dev
-        - bff.staging1.sqfaas.dev
-        - staging1.sqfaas.dev
+        - kc.staging3.sqfaas.dev
+        - bff.staging3.sqfaas.dev
+        - staging3.sqfaas.dev
         ip: 10.140.134.13    
       imagePullSecrets:
       - name: acr-secret
