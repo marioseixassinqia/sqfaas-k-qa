@@ -25,6 +25,13 @@ spec:
   - host: "staging2.sqfaas.dev"
     http:
       paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sqctrl
+            port:
+              number: 80
       - path: /frontend
         pathType: Prefix
         backend:
