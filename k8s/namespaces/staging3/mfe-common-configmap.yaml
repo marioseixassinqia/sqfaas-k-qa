@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-common-configmap
+  namespace: staging3
+data:
+  AUTH_SERVER_URL: https://kc.staging3.sqfaas.dev/realms/sinqia
+  BFF_COMPONENTES: https://bff.staging3.sqfaas.dev/componentes/api
+  AJUDA_URL: https://staging3.sqfaas.dev/help/view
+  PARAM_FAVORITOS_URL: https://bff.staging3.sqfaas.dev/favoritos/api
+  BFF_MENU: https://bff.staging3.sqfaas.dev/api
