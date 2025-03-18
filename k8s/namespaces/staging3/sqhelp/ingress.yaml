@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: sqhelp-ingress
-  namespace: staging2
+  namespace: staging3
   annotations:
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
@@ -15,10 +15,10 @@ spec:
   ingressClassName: nginx-private
   tls:
   - hosts:
-    - "staging2.sqfaas.dev"
+    - "staging3.sqfaas.dev"
     secretName: ingress-secret
   rules:
-  - host: "staging2.sqfaas.dev"
+  - host: "staging3.sqfaas.dev"
     http:
       paths:
       - path: /help
