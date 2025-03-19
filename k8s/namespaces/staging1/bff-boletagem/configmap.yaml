@@ -3,5 +3,3 @@ kind: ConfigMap
 metadata:
   name: bff-boletagem-configmap
   namespace: staging1
-data:
-  SERVER_FORWARDHEADERSSTRATEGY: framework
