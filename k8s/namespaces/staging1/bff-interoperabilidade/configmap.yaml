@@ -3,5 +3,3 @@ kind: ConfigMap
 metadata:
   name: bff-interoperabilidade-configmap
   namespace: staging1
-data:
-  teste: teste
