@@ -3,3 +3,5 @@ kind: ConfigMap
 metadata:
   name: bff-importacoes-configmap
   namespace: staging1
+data:
+  teste: teste
