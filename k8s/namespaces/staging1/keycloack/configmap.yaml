@@ -17,8 +17,7 @@ data:
   KEYCLOAK_ADMIN: admin
   KEYCLOAK_ADMIN_PASSWORD: admin
   TZ: America/Sao_Paulo
-  teste: teste
-kind: ConfigMap
+  kind: ConfigMap
 metadata:
   name: keycloak-config
   namespace: staging1
