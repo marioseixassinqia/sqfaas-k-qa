@@ -3,3 +3,4 @@ kind: ConfigMap
 metadata:
   name: bff-gestao-carteiras-configmap
   namespace: staging1
+  teste: teste
