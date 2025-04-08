@@ -1,0 +1,136 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-config
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/config
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-data
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/data
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-exports
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/exports
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-filesportal
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/filesportal
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-imports
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/imports
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-shared
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/shared
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-bikini-pv-upload
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: premium-rwo
+  hostPath:
+    path: /sqctrl/bikini/upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sqctrl-certs-pv
+  namespace: bikini
+spec:
+  capacity:
+    storage: 1Gi  
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce  
+  persistentVolumeReclaimPolicy: Retain  
+  storageClassName: premium-rwo
+  hostPath:
+    path: /opt/certs/ 
+    #type: Directory 
+

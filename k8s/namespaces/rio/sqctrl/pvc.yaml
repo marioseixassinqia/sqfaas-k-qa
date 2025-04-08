@@ -1,0 +1,124 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-config
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-config
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-data
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-exports
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-exports
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-filesportal
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-filesportal
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-imports
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-imports
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-shared
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-shared
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-upload
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-rio-pv-upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-certs-pvc
+  namespace: rio
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-certs-pv
+

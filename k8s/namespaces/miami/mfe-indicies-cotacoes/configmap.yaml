@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-indices-cotacoes-configmap
+  namespace: miami
+data:
+  BFF_URL: https://bff.miami.sqfaas.dev/importacoes/api

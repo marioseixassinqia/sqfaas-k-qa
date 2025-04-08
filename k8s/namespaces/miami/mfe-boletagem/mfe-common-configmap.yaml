@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-common-configmap
+  namespace: miami
+data:
+  AUTH_SERVER_URL: https://kc.miami.sqfaas.dev/realms/sinqia
+  BFF_COMPONENTES: https://bff.miami.sqfaas.dev/componentes/api
+  AJUDA_URL: https://miami.sqfaas.dev/help/view
+  PARAM_FAVORITOS_URL: https://bff.miami.sqfaas.dev/favoritos/api
+  BFF_MENU: https://bff.miami.sqfaas.dev/api

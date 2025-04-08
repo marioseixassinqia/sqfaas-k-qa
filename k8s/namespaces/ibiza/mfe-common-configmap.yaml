@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-common-configmap
+  namespace: ibiza
+data:
+  AUTH_SERVER_URL: https://kc.ibiza.sqfaas.dev/realms/sinqia
+  BFF_COMPONENTES: https://bff.ibiza.sqfaas.dev/componentes/api
+  AJUDA_URL: https://ibiza.sqfaas.dev/help/view
+  PARAM_FAVORITOS_URL: https://bff.ibiza.sqfaas.dev/favoritos/api
+  BFF_MENU: https://bff.ibiza.sqfaas.dev/api

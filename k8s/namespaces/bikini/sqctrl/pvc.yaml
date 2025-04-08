@@ -1,0 +1,124 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-config
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-config
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-data
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-exports
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-exports
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-filesportal
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-filesportal
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-imports
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-imports
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-shared
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-shared
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-pvc-upload
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-bikini-pv-upload
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqctrl-certs-pvc
+  namespace: bikini
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  
+  volumeMode: Filesystem
+  storageClassName: premium-rwo
+  volumeName: sqctrl-certs-pv
+

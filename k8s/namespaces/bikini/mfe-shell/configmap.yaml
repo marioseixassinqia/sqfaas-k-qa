@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-shell-configmap
+  namespace: bikini
+data:
+  BFF_URL: https://bff.bikini.sqfaas.dev/shell/api
+  MFE_CONTROLE_PASSIVO: https://bikini.sqfaas.dev/mfe-controle-passivo/remoteEntry.js
+  MFE_INDICES_COTACOES: https://bikini.sqfaas.dev/mfe-indices-cotacoes/remoteEntry.js
+  MFE_CADASTROS_BASICOS: https://bikini.sqfaas.dev/mfe-cadastros-basicos/remoteEntry.js
+  MFE_GESTAO_CARTEIRAS: https://bikini.sqfaas.dev/mfe-gestao-carteiras/remoteEntry.js
+  MFE_BOLETAGEM: https://bikini.sqfaas.dev/mfe-boletagem/remoteEntry.js
+  MFE_INTEROPERABILIDADE: https://bikini.sqfaas.dev/mfe-interoperabilidade/remoteEntry.js
+  MFE_LEGADO: https://bikini.sqfaas.dev/mfe-sqctrl-legado/remoteEntry.js
+  PARAM_FAVORITOS_URL: https://bff.bikini.sqfaas.dev/favoritos/api
+  URL_LEGADO: https://bikini.sqfaas.dev/frontend

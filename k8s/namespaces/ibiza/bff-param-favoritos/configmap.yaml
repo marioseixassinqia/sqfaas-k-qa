@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bff-param-favoritos-configmap
+  namespace: ibiza
+data:
+  SINQIA_FAVORITOS_URL: https://ibiza.sqfaas.dev/svc-param-favoritos

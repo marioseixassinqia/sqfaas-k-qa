@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-cadastros-basicos-configmap
+  namespace: rio
+data:
+  BFF_URL: https://bff.rio.sqfaas.dev/cadastros-basicos/api

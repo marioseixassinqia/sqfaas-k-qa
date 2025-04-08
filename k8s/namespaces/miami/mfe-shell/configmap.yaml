@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-shell-configmap
+  namespace: miami
+data:
+  BFF_URL: https://bff.miami.sqfaas.dev/shell/api
+  MFE_CONTROLE_PASSIVO: https://miami.sqfaas.dev/mfe-controle-passivo/remoteEntry.js
+  MFE_INDICES_COTACOES: https://miami.sqfaas.dev/mfe-indices-cotacoes/remoteEntry.js
+  MFE_CADASTROS_BASICOS: https://miami.sqfaas.dev/mfe-cadastros-basicos/remoteEntry.js
+  MFE_GESTAO_CARTEIRAS: https://miami.sqfaas.dev/mfe-gestao-carteiras/remoteEntry.js
+  MFE_BOLETAGEM: https://miami.sqfaas.dev/mfe-boletagem/remoteEntry.js
+  MFE_INTEROPERABILIDADE: https://miami.sqfaas.dev/mfe-interoperabilidade/remoteEntry.js
+  MFE_LEGADO: https://miami.sqfaas.dev/mfe-sqctrl-legado/remoteEntry.js
+  PARAM_FAVORITOS_URL: https://bff.miami.sqfaas.dev/favoritos/api
+  URL_LEGADO: https://miami.sqfaas.dev/frontend

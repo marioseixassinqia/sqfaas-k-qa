@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bff-param-favoritos-configmap
+  namespace: miami
+data:
+  SINQIA_FAVORITOS_URL: https://miami.sqfaas.dev/svc-param-favoritos

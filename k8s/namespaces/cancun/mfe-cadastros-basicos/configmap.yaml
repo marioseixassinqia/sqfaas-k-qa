@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-cadastros-basicos-configmap
+  namespace: cancun
+data:
+  BFF_URL: https://bff.cancun.sqfaas.dev/cadastros-basicos/api

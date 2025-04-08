@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-interoperabilidade-configmap
+  namespace: bikini
+data:
+  BFF_URL: https://bff.bikini.sqfaas.dev/interoperabilidade/api

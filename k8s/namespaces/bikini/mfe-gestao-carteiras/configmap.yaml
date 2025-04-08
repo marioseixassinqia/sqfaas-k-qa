@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-gestao-carteiras-configmap
+  namespace: bikini
+data:
+  BFF_URL: https://bff.bikini.sqfaas.dev/gestao-carteiras/api

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-common-configmap
+  namespace: rio
+data:
+  AUTH_SERVER_URL: https://kc.rio.sqfaas.dev/realms/sinqia
+  BFF_COMPONENTES: https://bff.rio.sqfaas.dev/componentes/api
+  AJUDA_URL: https://rio.sqfaas.dev/help/view
+  PARAM_FAVORITOS_URL: https://bff.rio.sqfaas.dev/favoritos/api
+  BFF_MENU: https://bff.rio.sqfaas.dev/api

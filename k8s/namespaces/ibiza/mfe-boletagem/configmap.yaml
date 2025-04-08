@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-boletagem-configmap
+  namespace: ibiza
+data:
+  BFF_URL: https://bff.ibiza.sqfaas.dev/boletagem/api

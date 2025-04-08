@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-common-configmap
+  namespace: cancun
+data:
+  AUTH_SERVER_URL: https://kc.cancun.sqfaas.dev/realms/sinqia
+  BFF_COMPONENTES: https://bff.cancun.sqfaas.dev/componentes/api
+  AJUDA_URL: https://cancun.sqfaas.dev/help/view
+  PARAM_FAVORITOS_URL: https://bff.cancun.sqfaas.dev/favoritos/api
+  BFF_MENU: https://bff.cancun.sqfaas.dev/api

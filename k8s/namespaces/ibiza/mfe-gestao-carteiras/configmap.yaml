@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-gestao-carteiras-configmap
+  namespace: ibiza
+data:
+  BFF_URL: https://bff.ibiza.sqfaas.dev/gestao-carteiras/api

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-interoperabilidade-configmap
+  namespace: rio
+data:
+  BFF_URL: https://bff.rio.sqfaas.dev/interoperabilidade/api

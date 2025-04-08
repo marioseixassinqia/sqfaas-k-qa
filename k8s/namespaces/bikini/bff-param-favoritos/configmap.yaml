@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bff-param-favoritos-configmap
+  namespace: bikini
+data:
+  SINQIA_FAVORITOS_URL: https://bikini.sqfaas.dev/svc-param-favoritos

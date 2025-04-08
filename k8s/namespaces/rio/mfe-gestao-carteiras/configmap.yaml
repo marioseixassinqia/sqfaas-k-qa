@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mfe-gestao-carteiras-configmap
+  namespace: rio
+data:
+  BFF_URL: https://bff.rio.sqfaas.dev/gestao-carteiras/api
